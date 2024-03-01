@@ -1,0 +1,62 @@
+# Package Overview
+package_name: obesity_model
+
+# Data Files
+training_data_file: ObesityDataSet_raw_and_data_sinthetic.csv
+test_data_file: obesity_test.csv
+
+# Variables
+# The variable we are attempting to predict (NObeyesdad)
+target: NObeyesdad
+
+pipeline_name: obesity_model
+pipeline_save_file: obesity__model_output_v
+
+features:
+  - Gender
+  - Age
+  - Height
+  - Weight
+  - family_history_with_overweight
+  - FAVC
+  - FCVC
+  - NCP
+  - CAEC
+  - SMOKE
+  - CH2O
+  - SCC 
+  - FAF 
+  - TUE
+  - CALC
+  - MTRANS
+
+numerical_columns:
+  - Age
+  - Height
+  - Weight
+  - FCVC
+  - NCP
+  - CH2O
+  - FAF
+  - TUE
+
+gender_column: Gender
+family_history_column: family_history_with_overweight
+favc_column: FAVC
+caec_column: CAEC
+smoke_column: SMOKE
+scc_column: SCC
+calc_column: CALC
+mtrans_column: MTRANS
+
+# Outlier IQR Multiplier
+iqr_multiplier: 1.5
+
+# set train/test split
+test_size: 0.20
+
+# to set the random seed
+random_state: 42
+# alogrithm parameters
+n_estimators: 700
+max_depth: 20
